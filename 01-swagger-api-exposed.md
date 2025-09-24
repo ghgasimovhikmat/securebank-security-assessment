@@ -1,18 +1,16 @@
 
 # SECURE BANK WAPT  
-**Report – Swagger API Exposed**  
-**Author: Leonardo Tamiano**
-
+**Report – Swagger API **  
 ---
 
 ## Issue #1 – Swagger API Exposed
 
-### 📝 Summary
+###  Summary
 The application has publicly exposed Swagger API documentation, which can be discovered through directory enumeration. This exposes potentially sensitive information about the backend API structure, endpoints, and request/response formats, increasing the attack surface.
 
 ---
 
-### 🔍 Discovery Method
+###  Discovery Method
 
 Using an enumeration tool such as `gobuster`:
 
@@ -35,7 +33,7 @@ These contain full Swagger/OpenAPI documentation for the application.
 
 ---
 
-### ⚠️ Risk
+### ️ Risk
 
 The Swagger UI and JSON schema expose:
 
@@ -53,12 +51,8 @@ This information can be used by attackers to:
 
 ---
 
-### 📸 Screenshot  
-![Swagger UI Exposure](../evidence/info-disclosure-1-swagger.png)
 
----
-
-### 🔎 HTTP Request / Response Evidence
+###  HTTP Request / Response Evidence
 
 #### `GET /swagger/index.html`
 
@@ -116,7 +110,7 @@ Content-Length: 27069
 
 ---
 
-### 🛠️ Recommendations
+###  Recommendations
 
 - **Disable Swagger UI and JSON documentation** in production environments.
 - If needed for developers, restrict access via:
@@ -127,7 +121,7 @@ Content-Length: 27069
 
 ---
 
-## 🔐 CVSS & Risk Classification
+##  CVSS & Risk Classification
 
 ```text
 * Information Disclosure
@@ -141,5 +135,5 @@ Content-Length: 27069
 
 ---
 
-**Status:** ⚠️ Vulnerability Confirmed  
+**Status:**  Vulnerability Confirmed  
 **Severity:** Medium – Based on CVSS 3.1 Vector
